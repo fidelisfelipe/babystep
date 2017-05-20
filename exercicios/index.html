@@ -1,0 +1,52 @@
+<html>
+ <head>
+  <title>Exercicio</title>
+ </head>
+ <body>
+ 
+ <h1 id="titulo">Hello word</h1>
+ <p>Deve receber um Nome de Produto, Valor, Quantidade e exibir o Valor Total</p> 
+ 
+ <p> Produto: <input type="text" id="codigo" value="Bola"/>
+ </p>
+ 
+ <p> Valor: <input type="text" id="valor" value="2"/> x Qnt: <input type="text" id="qnt" value="10"/>
+ </p>
+ 
+ <button onclick="calculo()">somar</button><button onclick="limpar()">limpar</button>
+ 
+ <p id="resultado">Resultados:</br> </p>
+ 
+<script>
+function calculo(){
+	//entradas 
+	var valor; //valor da peça 
+	var codigo; //codigo da peça
+	var qnt; //quantidade de peças
+
+	//definição de valores
+	var txtValor = document.getElementById("valor").value;
+	var txtQnt = document.getElementById("qnt").value;
+	var txtCodigo = document.getElementById("codigo").value;
+	
+	valor = Number(txtValor);
+	qnt = Number(txtQnt);
+	codigo = txtCodigo;
+
+	//processamento e saida
+	var total = (valor * qnt); 
+	document.getElementById("resultado").innerHTML += codigo + ":" + txtValor +" * "+ txtQnt + " = " + total+"</br>";
+	
+	console.log("resultado do calculo: "+ (codigo + ":" +total));
+}
+function limpar(){
+	document.getElementById("valor").value = "";
+	document.getElementById("qnt").value = "";
+	document.getElementById("codigo").value = "";
+	console.log("campos limpos!");
+}
+</script>
+ 
+
+ </body>
+</html>
